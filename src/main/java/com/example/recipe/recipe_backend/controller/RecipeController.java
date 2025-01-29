@@ -14,19 +14,19 @@ public class RecipeController {
     @Autowired
     private RecipeRepository recipeRepository;
 
-    // افزودن دستور غذا (POST)
+    // Add a food recipe (POST)
     @PostMapping
     public Recipe saveRecipe(@RequestBody Recipe recipe) {
         return recipeRepository.save(recipe);
     }
 
-    // نمایش تمام دستور غذاها (GET)
+    // Show all food recipes (GET)
     @GetMapping
     public List<Recipe> getAllRecipes() {
         return recipeRepository.findAll();
     }
 
-    // حذف دستور غذا با ID (DELETE)
+    // Delete a food recipe byID (DELETE)
     @DeleteMapping("/{id}")
     public void deleteRecipe(@PathVariable Long id) {
         recipeRepository.deleteById(id);
