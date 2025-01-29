@@ -11,19 +11,23 @@ public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String recipeId; // ID دستور غذا از API خارجی
+    private String recipeId; // ID from the meal database API
     private String recipeName;
+    private String category;
+    private String instructions;
+    private String imageUrl;
 
-    // Constructor پیش‌فرض
     public Recipe() {}
 
-    // Constructor
-    public Recipe(String recipeId, String recipeName) {
+    public Recipe(String recipeId, String recipeName, String category, String instructions, String imageUrl) {
         this.recipeId = recipeId;
         this.recipeName = recipeName;
+        this.category = category;
+        this.instructions = instructions;
+        this.imageUrl = imageUrl;
     }
 
-    // Getters و Setters
+    // Getters  and Setters
     public Long getId() {
         return id;
     }
@@ -46,5 +50,29 @@ public class Recipe {
 
     public void setRecipeName(String recipeName) {
         this.recipeName = recipeName;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getInstructions() {
+        return instructions;
+    }
+
+    public void setInstructions(String instructions) {
+        this.instructions = instructions;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
