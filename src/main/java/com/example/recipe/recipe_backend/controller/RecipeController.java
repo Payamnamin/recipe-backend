@@ -41,7 +41,16 @@ public class RecipeController {
     @GetMapping("/search/{mealName}")
     public String searchMeal(@PathVariable String mealName) {
         return mealService.searchMeal(mealName);
-  }
+    }
+    // add a favorite recipe to the database
+    @PostMapping("/save")
+     public Recipe saveFavoriteRecipe(@RequestBody Recipe recipe) {
+    return recipeRepository.save(recipe);
+}
+
+
+
+   
 
     
 
