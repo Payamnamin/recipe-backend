@@ -1,5 +1,6 @@
 package com.example.recipe.recipe_backend.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,6 +15,8 @@ public class Recipe {
     private String recipeId; // ID from the meal database API
     private String recipeName;
     private String category;
+
+    @Column(columnDefinition = "TEXT")
     private String instructions;
     private String imageUrl;
 
