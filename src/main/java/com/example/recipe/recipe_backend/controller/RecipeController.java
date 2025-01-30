@@ -42,7 +42,6 @@ public class RecipeController {
     private MealService mealService;
 
     // Search for a meal by name using the Meal Database API
-    
     @GetMapping("/search/{mealName}")
 public ResponseEntity<JsonNode> searchMeal(@PathVariable String mealName) {
     try {
@@ -52,7 +51,8 @@ public ResponseEntity<JsonNode> searchMeal(@PathVariable String mealName) {
             return ResponseEntity.status(404).body(null);
         }
 
-        // تبدیل رشته JSON به ساختار JSON واقعی بدون escape اضافی
+        /*  Convert a JSON string in to an actual JSON structre
+        without additional escapes*/
         ObjectMapper objectMapper = new ObjectMapper();
         JsonNode jsonNode = objectMapper.readTree(response.trim());
 
@@ -63,7 +63,6 @@ public ResponseEntity<JsonNode> searchMeal(@PathVariable String mealName) {
     }
 }
     // add a favorite recipe to the database
-
     @PostMapping("/save")
 public ResponseEntity<?> saveFavoriteRecipe(@RequestBody Recipe recipe) {
     try {

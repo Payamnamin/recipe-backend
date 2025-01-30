@@ -30,7 +30,7 @@ public class Recipe {
         this.imageUrl = imageUrl;
     }
 
-    // Getters  and Setters
+   
     public Long getId() {
         return id;
     }
